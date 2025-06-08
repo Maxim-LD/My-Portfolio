@@ -199,7 +199,7 @@ export default function Home() {
               </TabsContent>
               <TabsContent value="frameworks" className="mt-4">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {[".NET Core", "ASP.NET", "Entity Framework", "Node.js", "Express", "Next.js"].map((skill) => (
+                  {["Node.js", "Express", "Next.js", ".NET Core", "ASP.NET", "Entity Framework"].map((skill) => (
                     <Badge key={skill} variant="outline" className="py-3 text-center justify-center">
                       {skill}
                     </Badge>
