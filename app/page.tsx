@@ -208,7 +208,7 @@ export default function Home() {
               </TabsContent>
               <TabsContent value="databases" className="mt-4">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {["SQL Server", "MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite", "Firebase", "DynamoDB"].map(
+                  {["MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite", "Firebase", "DynamoDB"].map(
                     (skill) => (
                       <Badge key={skill} variant="outline" className="py-3 text-center justify-center">
                         {skill}
@@ -219,7 +219,7 @@ export default function Home() {
               </TabsContent>
               <TabsContent value="tools" className="mt-4">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {["Git", "Docker", "Azure", "AWS", "CI/CD", "Visual Studio", "VS Code", "Postman"].map((skill) => (
+                  {["Git", "Docker", "Azure", "AWS", "CI/CD", "Visual Studio", "VS Code", "Postman", "Jest", "Supertest"].map((skill) => (
                     <Badge key={skill} variant="outline" className="py-3 text-center justify-center">
                       {skill}
                     </Badge>
@@ -258,7 +258,7 @@ export default function Home() {
                   "Paystack API",
                   "RBAC",
                 ]}
-                githubUrl="https://github.com/maxim-ld/car-dealer-api"
+                githubUrl="https://github.com/Maxim-LD/Car-Dealer-API"
                 imageUrl="/placeholder.svg?height=200&width=400"
                 icon={<Server className="h-10 w-10" />}
               />
