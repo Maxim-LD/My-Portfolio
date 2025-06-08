@@ -208,18 +208,27 @@ export default function Home() {
               </TabsContent>
               <TabsContent value="databases" className="mt-4">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {["MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite", "Firebase", "DynamoDB"].map(
-                    (skill) => (
-                      <Badge key={skill} variant="outline" className="py-3 text-center justify-center">
-                        {skill}
-                      </Badge>
-                    ),
-                  )}
+                  {["MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite", "Firebase", "DynamoDB"].map((skill) => (
+                    <Badge key={skill} variant="outline" className="py-3 text-center justify-center">
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
               </TabsContent>
               <TabsContent value="tools" className="mt-4">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {["Git", "Docker", "Azure", "AWS", "CI/CD", "Visual Studio", "VS Code", "Postman", "Jest", "Supertest"].map((skill) => (
+                  {[
+                    "Git",
+                    "Docker",
+                    "Azure",
+                    "AWS",
+                    "CI/CD",
+                    "Visual Studio",
+                    "VS Code",
+                    "Postman",
+                    "Jest",
+                    "Supertest",
+                  ].map((skill) => (
                     <Badge key={skill} variant="outline" className="py-3 text-center justify-center">
                       {skill}
                     </Badge>
@@ -454,11 +463,13 @@ function ProjectCard({
   description,
   technologies,
   icon,
+  githubUrl,
 }: {
   title: string
   description: string
   technologies: string[]
   icon: React.ReactNode
+  githubUrl?: string
 }) {
   return (
     <Card className="flex flex-col h-full">
@@ -471,12 +482,24 @@ function ProjectCard({
       <CardContent className="flex-1">
         <p className="text-muted-foreground text-left">{description}</p>
       </CardContent>
-      <CardFooter className="flex flex-wrap gap-2 border-t pt-4">
-        {technologies.map((tech) => (
-          <Badge key={tech} variant="secondary" className="text-xs">
-            {tech}
-          </Badge>
-        ))}
+      <CardFooter className="flex flex-col gap-4 border-t pt-4">
+        <div className="flex flex-wrap gap-2 w-full">
+          {technologies.map((tech) => (
+            <Badge key={tech} variant="secondary" className="text-xs">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+        {githubUrl && (
+          <div className="w-full">
+            <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" className="w-full">
+                <Github className="mr-2 h-4 w-4" />
+                View on GitHub
+              </Button>
+            </Link>
+          </div>
+        )}
       </CardFooter>
     </Card>
   )
