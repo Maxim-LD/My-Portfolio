@@ -58,8 +58,15 @@ export default function Portfolio() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-text/10 bg-primary/95 backdrop-blur-md">
         <nav className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link href="/" className="font-heading text-xl font-bold text-accent">
-            AA
+          <Link href="/" className="flex items-center">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Display-kpSeV2AiAqaTGs70zolEAqMxgEbePe.jpeg"
+              alt="Arowosere Abdulkhabeer Logo"
+              width={32} // Sets the image width to 32px
+              height={30} // Sets the image height to 32px
+              className="rounded-full object-cover border border-accent" // Makes it circular and adds a border
+              priority // Keep priority for the logo in the header
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -255,7 +262,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Agendas */}
+            {/* Agendos */}
             <Card className="bg-primary border-accent/20 hover:border-accent/40 transition-all group">
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -276,13 +283,16 @@ export default function Portfolio() {
                     Node.js
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
-                    Express.js
+                    TypeScript
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
-                    MongoDB
+                    MySQL
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     Redis
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    Real-time Collab
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     WebSocket
@@ -290,7 +300,7 @@ export default function Portfolio() {
                 </div>
               </CardContent>
               <CardFooter className="gap-2">
-                <Link href="https://github.com/Maxim-LD" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Link href="https://github.com/Maxim-LD/agendos-api" target="_blank" rel="noopener noreferrer" className="flex-1">
                   <Button
                     variant="outline"
                     size="sm"
@@ -298,6 +308,21 @@ export default function Portfolio() {
                   >
                     <Github className="mr-2 h-4 w-4" />
                     GitHub
+                  </Button>
+                </Link>
+                <Link
+                  href="https://agendos.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live
                   </Button>
                 </Link>
               </CardFooter>
@@ -331,6 +356,12 @@ export default function Portfolio() {
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     Knex.js
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    FinTech
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    Wallet System
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     Testing
@@ -379,6 +410,12 @@ export default function Portfolio() {
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     Stripe API
                   </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    Payments
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    High Availability
+                  </Badge>
                 </div>
               </CardContent>
               <CardFooter className="gap-2">
@@ -417,6 +454,12 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    Node.js
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    Express.js
+                  </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     TypeScript
                   </Badge>
@@ -534,10 +577,16 @@ export default function Portfolio() {
                     Node.js
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
-                    Express
+                    TypeScript
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    Express.js
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     MongoDB
+                  </Badge>
+                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                    RBAC
                   </Badge>
                   <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
                     JWT
@@ -600,7 +649,7 @@ export default function Portfolio() {
             <div>
               <h3 className="font-heading text-xl font-semibold text-accent mb-4">Frameworks</h3>
               <div className="space-y-2">
-                {["Express.js", "Next.js", "NestJS", ".NET Core", "ASP.NET", "Fastify"].map((skill) => (
+                {["Express.js", "Next.js", ".NET", "ASP.NET"].map((skill) => (
                   <div key={skill} className="text-text/80 hover:text-accent transition-colors cursor-default">
                     {skill}
                   </div>
@@ -611,7 +660,7 @@ export default function Portfolio() {
             <div>
               <h3 className="font-heading text-xl font-semibold text-accent mb-4">Databases</h3>
               <div className="space-y-2">
-                {["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite", "DynamoDB"].map((skill) => (
+                {["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite"].map((skill) => (
                   <div key={skill} className="text-text/80 hover:text-accent transition-colors cursor-default">
                     {skill}
                   </div>

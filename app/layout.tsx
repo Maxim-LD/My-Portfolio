@@ -34,11 +34,12 @@ export const metadata: Metadata = {
     "Backend Engineer",
     "Software Developer",
     "Node.js",
-    "TypeScript",
     "System Design",
     "API Development",
+    "TypeScript",
     "Arowosere Abdulkhabeer",
   ],
+  icons: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Display-kpSeV2AiAqaTGs70zolEAqMxgEbePe.jpeg",
   authors: [{ name: "Arowosere Abdulkhabeer" }],
   creator: "Arowosere Abdulkhabeer",
   openGraph: {
@@ -82,7 +83,7 @@ export const metadata: Metadata = {
   verification: {
     google: "googled511cf04454654b3",
   },
-    generator: 'v0.app'
+  
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -108,8 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
+      <head> 
         <meta name="google-site-verification" content="googled511cf04454654b3" />
 
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
