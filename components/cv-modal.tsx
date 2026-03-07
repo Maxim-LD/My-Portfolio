@@ -114,40 +114,45 @@ export function CVModal() {
                 <h2 className="text-xl font-bold mb-4 text-white border-b border-slate-600 pb-2">EXPERIENCE</h2>
                 <div className="space-y-6 text-gray-300">
                   <div>
-                    <h3 className="font-bold text-white">ScholarGuide TECH — Backend Developer (Volunteer)</h3>
-                    <p className="text-blue-400 mb-2">Remote | March 2025 – Present</p>
+                    <h3 className="font-bold text-white">ScholarGuide Tech — Remote Backend Software Engineer</h3>
+                    <p className="text-blue-400 mb-2">Remote | Sep 2025 – Present</p>
                     <ul className="list-disc list-inside space-y-1 text-sm">
-                      <li>
-                        Architected JWT-based auth system with RBAC, securing access for users
-                        (Admins/Teachers/Students)
-                      </li>
-                      <li>
-                        Built RESTful APIs for study plans, tracking, resources, and analytics; reduced response time by
-                        30%
-                      </li>
-                      <li>Implemented input sanitization and rate limiting to mitigate common web vulnerabilities</li>
-                      <li>Sped up MongoDB queries by 40% by strategically applying .lean() and .populate()</li>
+                      <li>Built and maintained core backend services using Node.js and TypeScript.</li>
+                      <li>Designed and enforced role-based access control (RBAC).</li>
+                      <li>Improved API performance and responsiveness through query optimization.</li>
+                      <li>Optimized MongoDB aggregation pipelines, reducing CPU usage by 40%.</li>
                     </ul>
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-white">InternPulse — Backend Development Intern</h3>
-                    <p className="text-blue-400 mb-2">Remote | November 2024 – March 2025</p>
+                    <h3 className="font-bold text-white">Epic Global Ltd — Backend Software Engineer (Contract)</h3>
+                    <p className="text-blue-400 mb-2">Remote | Jul 2025 – Dec 2025</p>
                     <ul className="list-disc list-inside space-y-1 text-sm">
-                      <li>Built core backend for Pedmonie, a digital payment platform</li>
-                      <li>Integrated Stripe and Paystack, implemented webhook validation</li>
-                      <li>Designed modular, reusable API controllers and service layers using Express.js</li>
-                      <li>Wrote unit and integration tests using Jest and Supertest, achieving 80%+ coverage</li>
+                      <li>Engineered backend services for an HR management platform using TypeScript and Node.js.</li>
+                      <li>Designed and implemented RESTful APIs and role-based access controls.</li>
+                      <li>Modeled relational data and implemented persistence logic using SQL and ORM tools.</li>
+                      <li>Implemented complex business rules and validations for HR processes.</li>
                     </ul>
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-white">BT Technologies Limited – IT/ Network Intern</h3>
-                    <p className="text-blue-400 mb-2">Lagos, Nigeria | September 2023 - February 2024</p>
+                    <h3 className="font-bold text-white">Dala Innovation — Remote Backend Developer (Contract)</h3>
+                    <p className="text-blue-400 mb-2">Remote | Mar 2025 – Aug 2025</p>
                     <ul className="list-disc list-inside space-y-1 text-sm">
-                      <li>Assisted in LAN/fiber installation, network diagnostics, system upgrades</li>
-                      <li>Supported configuration of departmental devices and verified connectivity integrity</li>
-                      <li>Completed structured training in web development, data analysis, and finance</li>
+                      <li>Developed secure backend access controls for the DalaCare App.</li>
+                      <li>Implemented JWT/OAuth authentication flows and middleware-based authorization.</li>
+                      <li>Applied core software security principles to mitigate vulnerabilities.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-white">InternPulse — Backend Developer (Internship)</h3>
+                    <p className="text-blue-400 mb-2">Remote | Sep 2024 – Feb 2025</p>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Developed and maintained backend services using Node.js and JavaScript.</li>
+                      <li>Integrated third-party payment APIs to improve transaction reliability.</li>
+                      <li>Implemented API logic for concurrent requests and real-time validations.</li>
+                      <li>Wrote and maintained unit and integration tests.</li>
                     </ul>
                   </div>
                 </div>
@@ -197,6 +202,30 @@ export function CVModal() {
                     <ul className="list-disc list-inside space-y-1 text-sm">
                       <li>Built full-featured REST API with Node.js, Express, TypeScript, and MongoDB</li>
                       <li>Included user registration, payment processing (Paystack), and RBAC</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-white">Intelligent Productivity & Life-Management System</h3>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Developed a full-stack system using TypeScript, Node.js, React.js, and MySQL.</li>
+                      <li>Designed streak tracking and built a real-time task engine.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-white">Node.js Payment Service</h3>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Developed a RESTful payment-processing API using Node.js and Express.</li>
+                      <li>Delivered a reliable rule-driven engine to parse financial instructions.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-white">Heuristic Engine API</h3>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Built a backend service that detects phishing threats across URLs, emails, and QR codes.</li>
+                      <li>Designed a scoring system that evaluates risk levels and explains flagged resources.</li>
                     </ul>
                   </div>
                 </div>

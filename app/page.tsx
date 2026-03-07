@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   Github,
   Linkedin,
@@ -15,43 +15,58 @@ import {
   ArrowRight,
   Download,
   ExternalLink,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Portfolio() {
-  const heroRef = useRef<HTMLElement>(null)
-  const aboutRef = useRef<HTMLElement>(null)
-  const projectsRef = useRef<HTMLElement>(null)
-  const skillsRef = useRef<HTMLElement>(null)
-  const contactRef = useRef<HTMLElement>(null)
+  const heroRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in")
+            entry.target.classList.add("animate-fade-in");
           }
-        })
+        });
       },
       { threshold: 0.1 },
-    )
+    );
 
-    const sections = [heroRef, aboutRef, projectsRef, skillsRef, contactRef]
+    const sections = [
+      heroRef,
+      aboutRef,
+      experienceRef,
+      projectsRef,
+      skillsRef,
+      contactRef,
+    ];
     sections.forEach((ref) => {
-      if (ref.current) observer.observe(ref.current)
-    })
+      if (ref.current) observer.observe(ref.current);
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const whatsappMessage = encodeURIComponent(
     "Hi Arowosere! I came across your portfolio and would love to discuss potential opportunities with you.",
-  )
+  );
 
   return (
     <div className="min-h-screen bg-primary">
@@ -70,36 +85,82 @@ export default function Portfolio() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#about" className="text-sm text-text/80 hover:text-accent transition-colors">
+            <Link
+              href="#about"
+              className="text-sm text-text/80 hover:text-accent transition-colors"
+            >
               About
             </Link>
-            <Link href="#projects" className="text-sm text-text/80 hover:text-accent transition-colors">
+            <Link
+              href="#experience"
+              className="text-sm text-text/80 hover:text-accent transition-colors"
+            >
+              Experience
+            </Link>
+            <Link
+              href="#projects"
+              className="text-sm text-text/80 hover:text-accent transition-colors"
+            >
               Projects
             </Link>
-            <Link href="#skills" className="text-sm text-text/80 hover:text-accent transition-colors">
+            <Link
+              href="#skills"
+              className="text-sm text-text/80 hover:text-accent transition-colors"
+            >
               Skills
             </Link>
-            <Link href="#contact" className="text-sm text-text/80 hover:text-accent transition-colors">
+            <Link
+              href="#contact"
+              className="text-sm text-text/80 hover:text-accent transition-colors"
+            >
               Contact
             </Link>
           </div>
 
           <div className="flex items-center gap-3">
-            <Link href="https://github.com/maxim-ld" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="text-text hover:text-accent hover:bg-accent/10">
+            <Link
+              href="https://github.com/maxim-ld"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-text hover:text-accent hover:bg-accent/10"
+              >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://linkedin.com/in/arowosere-ak" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="text-text hover:text-accent hover:bg-accent/10">
+            <Link
+              href="https://linkedin.com/in/arowosere-ak"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-text hover:text-accent hover:bg-accent/10"
+              >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="https://x.com/A_Quintet" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="text-text hover:text-accent hover:bg-accent/10">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <Link
+              href="https://x.com/A_Quintet"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-text hover:text-accent hover:bg-accent/10"
+              >
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
                 <span className="sr-only">X (Twitter)</span>
@@ -125,8 +186,9 @@ export default function Portfolio() {
               </h1>
 
               <p className="text-lg text-text/70 leading-relaxed">
-                Crafting scalable architectures and secure APIs with a focus on clean code, system design, and
-                leadership in modern backend development.
+                Crafting scalable architectures and secure APIs with a focus on
+                clean code, system design, and leadership in modern backend
+                development.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -137,7 +199,10 @@ export default function Portfolio() {
                   </Button>
                 </Link>
                 <Link href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="border-accent/20 text-text hover:bg-accent/10 bg-transparent">
+                  <Button
+                    variant="outline"
+                    className="border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+                  >
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
                   </Button>
@@ -164,32 +229,50 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} id="about" className="py-20 px-4 bg-primary/50 opacity-0">
+      <section
+        ref={aboutRef}
+        id="about"
+        className="py-20 px-4 bg-primary/50 opacity-0"
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">About Me</h2>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">
+              About Me
+            </h2>
             <p className="text-text/70 max-w-2xl mx-auto">
-              A passionate engineer focused on building robust, maintainable systems
+              A passionate engineer focused on building robust, maintainable
+              systems
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <p className="text-text/80 leading-relaxed">
-                As a <strong className="text-accent">Backend Software Engineer</strong>, I specialize in designing and
-                implementing scalable architectures that power modern applications. My approach combines technical
-                expertise with leadership principles to deliver solutions that are both efficient and maintainable.
+                As a{" "}
+                <strong className="text-accent">
+                  Backend Software Engineer
+                </strong>
+                , I specialize in designing and implementing scalable
+                architectures that power modern applications. My approach
+                combines technical expertise with leadership principles to
+                deliver solutions that are both efficient and maintainable.
               </p>
 
               <p className="text-text/80 leading-relaxed">
-                I'm passionate about <strong className="text-accent-secondary">clean code practices</strong>,
-                security-first development, and mentoring teams to adopt best practices. My experience spans from
-                optimizing high-traffic systems to integrating complex payment gateways with 99.8% uptime.
+                I'm passionate about{" "}
+                <strong className="text-accent-secondary">
+                  clean code practices
+                </strong>
+                , security-first development, and mentoring teams to adopt best
+                practices. My experience spans from optimizing high-traffic
+                systems to integrating complex payment gateways with 99.8%
+                uptime.
               </p>
 
               <p className="text-text/80 leading-relaxed">
-                Currently, I'm focused on architectural thinking, system design patterns, and exploring how to build
-                resilient distributed systems that scale gracefully under load.
+                Currently, I'm focused on architectural thinking, system design
+                patterns, and exploring how to build resilient distributed
+                systems that scale gracefully under load.
               </p>
 
               <div className="flex flex-wrap gap-3 pt-4">
@@ -212,42 +295,275 @@ export default function Portfolio() {
               <Card className="bg-primary border-accent/20">
                 <CardHeader className="pb-3">
                   <Code2 className="h-8 w-8 text-accent mb-2" />
-                  <CardTitle className="text-text text-base">Clean Code</CardTitle>
+                  <CardTitle className="text-text text-base">
+                    Clean Code
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-text/70">Writing maintainable, testable, and scalable code</p>
+                  <p className="text-sm text-text/70">
+                    Writing maintainable, testable, and scalable code
+                  </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-primary border-accent/20">
                 <CardHeader className="pb-3">
                   <Database className="h-8 w-8 text-accent mb-2" />
-                  <CardTitle className="text-text text-base">Architecture</CardTitle>
+                  <CardTitle className="text-text text-base">
+                    Architecture
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-text/70">Designing robust system architectures</p>
+                  <p className="text-sm text-text/70">
+                    Designing robust system architectures
+                  </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-primary border-accent/20">
                 <CardHeader className="pb-3">
                   <Shield className="h-8 w-8 text-accent mb-2" />
-                  <CardTitle className="text-text text-base">Security</CardTitle>
+                  <CardTitle className="text-text text-base">
+                    Security
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-text/70">Implementing secure, compliant solutions</p>
+                  <p className="text-sm text-text/70">
+                    Implementing secure, compliant solutions
+                  </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-primary border-accent/20">
                 <CardHeader className="pb-3">
                   <Zap className="h-8 w-8 text-accent mb-2" />
-                  <CardTitle className="text-text text-base">Performance</CardTitle>
+                  <CardTitle className="text-text text-base">
+                    Performance
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-text/70">Optimizing for speed and efficiency</p>
+                  <p className="text-sm text-text/70">
+                    Optimizing for speed and efficiency
+                  </p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section
+        ref={experienceRef}
+        id="experience"
+        className="py-20 px-4 opacity-0"
+      >
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">
+              Professional Experience
+            </h2>
+            <p className="text-text/70 max-w-2xl mx-auto">
+              My journey building and optimizing real-world systems
+            </p>
+          </div>
+
+          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent/20 before:to-transparent">
+            {/* Experience 1 */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-accent text-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10">
+                <Shield className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
+                <div className="flex flex-col mb-2">
+                  <h3 className="font-bold text-lg text-text">
+                    ScholarGuide Tech
+                  </h3>
+                  <div className="text-accent text-sm font-medium">
+                    Remote Backend Software Engineer
+                  </div>
+                  <time className="text-text/60 text-xs mt-1">
+                    Sep 2025 – Present
+                  </time>
+                </div>
+                <div className="text-text/80 text-sm">
+                  <ul className="space-y-2 mt-2">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Built and maintained core backend services using Node.js
+                        and TypeScript.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Designed and enforced role-based access control (RBAC).
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Improved API performance and responsiveness through
+                        query optimization.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Optimized MongoDB aggregation pipelines, reducing CPU
+                        usage by 40%.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Experience 2 */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-text/20 text-text shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 transition-colors group-hover:bg-accent group-hover:text-primary">
+                <Database className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
+                <div className="flex flex-col mb-2">
+                  <h3 className="font-bold text-lg text-text">
+                    Epic Global Ltd
+                  </h3>
+                  <div className="text-accent text-sm font-medium">
+                    Backend Software Engineer (Contract)
+                  </div>
+                  <time className="text-text/60 text-xs mt-1">
+                    Jul 2025 – Dec 2025
+                  </time>
+                </div>
+                <div className="text-text/80 text-sm">
+                  <ul className="space-y-2 mt-2">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Engineered backend services for an HR management
+                        platform.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Designed and implemented RESTful APIs and role-based
+                        access controls.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Modeled relational data and implemented persistence
+                        logic using SQL and ORM tools.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Implemented complex business rules and validations for
+                        HR processes.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Experience 3 */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-text/20 text-text shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 transition-colors group-hover:bg-accent group-hover:text-primary">
+                <Code2 className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
+                <div className="flex flex-col mb-2">
+                  <h3 className="font-bold text-lg text-text">
+                    Dala Innovation
+                  </h3>
+                  <div className="text-accent text-sm font-medium">
+                    Remote Backend Developer (Contract)
+                  </div>
+                  <time className="text-text/60 text-xs mt-1">
+                    Mar 2025 – Aug 2025
+                  </time>
+                </div>
+                <div className="text-text/80 text-sm">
+                  <ul className="space-y-2 mt-2">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Developed secure backend access controls for the
+                        DalaCare App.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Implemented JWT/OAuth authentication flows and
+                        middleware-based authorization.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Applied core software security principles to mitigate
+                        vulnerabilities.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Experience 4 */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-text/20 text-text shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 transition-colors group-hover:bg-accent group-hover:text-primary">
+                <Zap className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
+                <div className="flex flex-col mb-2">
+                  <h3 className="font-bold text-lg text-text">InternPulse</h3>
+                  <div className="text-accent text-sm font-medium">
+                    Backend Developer (Internship)
+                  </div>
+                  <time className="text-text/60 text-xs mt-1">
+                    Sep 2024 – Feb 2025
+                  </time>
+                </div>
+                <div className="text-text/80 text-sm">
+                  <ul className="space-y-2 mt-2">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Developed and maintained backend services using Node.js
+                        and JavaScript.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Integrated third-party payment APIs to improve
+                        transaction reliability.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Implemented API logic for concurrent requests and
+                        real-time validations.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Wrote and maintained unit and integration tests.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -257,8 +573,12 @@ export default function Portfolio() {
       <section ref={projectsRef} id="projects" className="py-20 px-4 opacity-0">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">Featured Projects</h2>
-            <p className="text-text/70 max-w-2xl mx-auto">A showcase of my work in building scalable backend systems</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-text/70 max-w-2xl mx-auto">
+              A showcase of my work in building scalable backend systems
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -267,40 +587,68 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <Database className="h-10 w-10 text-accent" />
-                  <Badge variant="secondary" className="bg-accent-secondary/10 text-accent-secondary">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent-secondary/10 text-accent-secondary"
+                  >
                     In Progress
                   </Badge>
                 </div>
-                <CardTitle className="text-text text-xl mt-4">Agendos</CardTitle>
+                <CardTitle className="text-text text-xl mt-4">
+                  Agendos
+                </CardTitle>
                 <CardDescription className="text-text/70">
-                  A comprehensive productivity platform featuring task management, reminders, and collaborative
-                  workspaces.
+                  A comprehensive productivity platform featuring task
+                  management, reminders, and collaborative workspaces.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Node.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     TypeScript
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     MySQL
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Redis
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Real-time Collab
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     WebSocket
                   </Badge>
                 </div>
               </CardContent>
               <CardFooter className="gap-2">
-                <Link href="https://github.com/Maxim-LD/agendos-api" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Link
+                  href="https://github.com/Maxim-LD/agendos-api"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
                   <Button
                     variant="outline"
                     size="sm"
@@ -333,43 +681,74 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <Code2 className="h-10 w-10 text-accent" />
-                  <Badge variant="secondary" className="bg-accent/10 text-accent">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
                     Completed
                   </Badge>
                 </div>
-                <CardTitle className="text-text text-xl mt-4">Demo Credit App</CardTitle>
+                <CardTitle className="text-text text-xl mt-4">
+                  Demo Credit App
+                </CardTitle>
                 <CardDescription className="text-text/70">
-                  A credit simulation backend built for learning wallet systems, transaction processing, and financial
-                  APIs.
+                  A credit simulation backend built for learning wallet systems,
+                  transaction processing, and financial APIs.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Node.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     TypeScript
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     MySQL
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Knex.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     FinTech
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Wallet System
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Testing
                   </Badge>
                 </div>
               </CardContent>
               <CardFooter className="gap-2">
-                <Link href="https://github.com/Maxim-LD" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Link
+                  href="https://github.com/Maxim-LD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
                   <Button
                     variant="outline"
                     size="sm"
@@ -387,33 +766,57 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <Shield className="h-10 w-10 text-accent" />
-                  <Badge variant="secondary" className="bg-accent/10 text-accent">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
                     Production
                   </Badge>
                 </div>
-                <CardTitle className="text-text text-xl mt-4">PEDMONIE</CardTitle>
+                <CardTitle className="text-text text-xl mt-4">
+                  PEDMONIE
+                </CardTitle>
                 <CardDescription className="text-text/70">
-                  Unified payment platform with Stripe integration, processing 5K+ transactions/month with 99.8% uptime.
+                  Unified payment platform with Stripe integration, processing
+                  5K+ transactions/month with 99.8% uptime.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Node.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Express.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     MySQL
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Stripe API
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Payments
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     High Availability
                   </Badge>
                 </div>
@@ -442,34 +845,57 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <Database className="h-10 w-10 text-accent" />
-                  <Badge variant="secondary" className="bg-accent/10 text-accent">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
                     Completed
                   </Badge>
                 </div>
-                <CardTitle className="text-text text-xl mt-4">Car Dealer API</CardTitle>
+                <CardTitle className="text-text text-xl mt-4">
+                  Car Dealer API
+                </CardTitle>
                 <CardDescription className="text-text/70">
-                  RESTful API for car dealership management with authentication, inventory tracking, and payment
-                  integration.
+                  RESTful API for car dealership management with authentication,
+                  inventory tracking, and payment integration.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Node.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Express.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     TypeScript
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     MongoDB
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     JWT
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Paystack
                   </Badge>
                 </div>
@@ -498,27 +924,45 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <Code2 className="h-10 w-10 text-accent" />
-                  <Badge variant="secondary" className="bg-accent/10 text-accent">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
                     Live
                   </Badge>
                 </div>
-                <CardTitle className="text-text text-xl mt-4">Sweetened Cleaning Services</CardTitle>
+                <CardTitle className="text-text text-xl mt-4">
+                  Sweetened Cleaning Services
+                </CardTitle>
                 <CardDescription className="text-text/70">
-                  Professional website for UK-based cleaning company with modern design and client inquiry system.
+                  Professional website for UK-based cleaning company with modern
+                  design and client inquiry system.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     HTML
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     CSS
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     JavaScript
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     SEO
                   </Badge>
                 </div>
@@ -562,33 +1006,57 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <Database className="h-10 w-10 text-accent" />
-                  <Badge variant="secondary" className="bg-accent/10 text-accent">
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
                     Completed
                   </Badge>
                 </div>
-                <CardTitle className="text-text text-xl mt-4">Library Management System</CardTitle>
+                <CardTitle className="text-text text-xl mt-4">
+                  Library Management System
+                </CardTitle>
                 <CardDescription className="text-text/70">
-                  Digital library backend with book cataloging, borrowing functionality, and role-based access control.
+                  Digital library backend with book cataloging, borrowing
+                  functionality, and role-based access control.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Node.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     TypeScript
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     Express.js
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     MongoDB
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     RBAC
                   </Badge>
-                  <Badge variant="outline" className="text-xs border-accent/20 text-text/70">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
                     JWT
                   </Badge>
                 </div>
@@ -611,11 +1079,207 @@ export default function Portfolio() {
                 </Link>
               </CardFooter>
             </Card>
+
+            {/* Intelligent Productivity */}
+            <Card className="bg-primary border-accent/20 hover:border-accent/40 transition-all group">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <Database className="h-10 w-10 text-accent" />
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
+                    Completed
+                  </Badge>
+                </div>
+                <CardTitle className="text-text text-xl mt-4">
+                  Productivity & Life-Management
+                </CardTitle>
+                <CardDescription className="text-text/70">
+                  Full-stack system for realistic planning with streak tracking
+                  and real-time task engine.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    Node.js
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    TypeScript
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    React.js
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    MySQL
+                  </Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="gap-2">
+                <Link
+                  href="https://github.com/Maxim-LD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+
+            {/* Node.js Payment Service */}
+            <Card className="bg-primary border-accent/20 hover:border-accent/40 transition-all group">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <Code2 className="h-10 w-10 text-accent" />
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
+                    Completed
+                  </Badge>
+                </div>
+                <CardTitle className="text-text text-xl mt-4">
+                  Node.js Payment Service
+                </CardTitle>
+                <CardDescription className="text-text/70">
+                  RESTful API to parse and execute financial instructions using
+                  a defined syntax and rule-driven engine.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    Node.js
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    Express.js
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    FinTech
+                  </Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="gap-2">
+                <Link
+                  href="https://github.com/Maxim-LD/nodejs-payment"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+
+            {/* Heuristic Engine API */}
+            <Card className="bg-primary border-accent/20 hover:border-accent/40 transition-all group">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <Shield className="h-10 w-10 text-accent" />
+                  <Badge
+                    variant="secondary"
+                    className="bg-accent/10 text-accent"
+                  >
+                    Completed
+                  </Badge>
+                </div>
+                <CardTitle className="text-text text-xl mt-4">
+                  Heuristic Engine API
+                </CardTitle>
+                <CardDescription className="text-text/70">
+                  Backend service for automated threat detection with a risk
+                  scoring system for URLs and emails.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    Node.js
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    Security
+                  </Badge>
+                  <Badge
+                    variant="outline"
+                    className="text-xs border-accent/20 text-text/70"
+                  >
+                    Algorithms
+                  </Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="gap-2">
+                <Link
+                  href="https://github.com/Maxim-LD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
           </div>
 
           <div className="text-center mt-12">
-            <Link href="https://github.com/maxim-ld" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="border-accent/20 text-text hover:bg-accent/10 bg-transparent">
+            <Link
+              href="https://github.com/maxim-ld"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+              >
                 View All Projects on GitHub
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -625,10 +1289,16 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section ref={skillsRef} id="skills" className="py-20 px-4 bg-primary/50 opacity-0">
+      <section
+        ref={skillsRef}
+        id="skills"
+        className="py-20 px-4 bg-primary/50 opacity-0"
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">Technical Expertise</h2>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">
+              Technical Expertise
+            </h2>
             <p className="text-text/70 max-w-2xl mx-auto">
               Technologies and tools I use to build robust backend systems
             </p>
@@ -636,10 +1306,22 @@ export default function Portfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-heading text-xl font-semibold text-accent mb-4">Languages</h3>
+              <h3 className="font-heading text-xl font-semibold text-accent mb-4">
+                Languages
+              </h3>
               <div className="space-y-2">
-                {["TypeScript", "JavaScript", "Node.js", "SQL", "C#", "Bash"].map((skill) => (
-                  <div key={skill} className="text-text/80 hover:text-accent transition-colors cursor-default">
+                {[
+                  "TypeScript",
+                  "JavaScript",
+                  "Node.js",
+                  "SQL",
+                  "C#",
+                  "Bash",
+                ].map((skill) => (
+                  <div
+                    key={skill}
+                    className="text-text/80 hover:text-accent transition-colors cursor-default"
+                  >
                     {skill}
                   </div>
                 ))}
@@ -647,10 +1329,15 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <h3 className="font-heading text-xl font-semibold text-accent mb-4">Frameworks</h3>
+              <h3 className="font-heading text-xl font-semibold text-accent mb-4">
+                Frameworks
+              </h3>
               <div className="space-y-2">
                 {["Express.js", "Next.js", ".NET", "ASP.NET"].map((skill) => (
-                  <div key={skill} className="text-text/80 hover:text-accent transition-colors cursor-default">
+                  <div
+                    key={skill}
+                    className="text-text/80 hover:text-accent transition-colors cursor-default"
+                  >
                     {skill}
                   </div>
                 ))}
@@ -658,21 +1345,41 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <h3 className="font-heading text-xl font-semibold text-accent mb-4">Databases</h3>
+              <h3 className="font-heading text-xl font-semibold text-accent mb-4">
+                Databases
+              </h3>
               <div className="space-y-2">
-                {["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite"].map((skill) => (
-                  <div key={skill} className="text-text/80 hover:text-accent transition-colors cursor-default">
-                    {skill}
-                  </div>
-                ))}
+                {["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite"].map(
+                  (skill) => (
+                    <div
+                      key={skill}
+                      className="text-text/80 hover:text-accent transition-colors cursor-default"
+                    >
+                      {skill}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
 
             <div>
-              <h3 className="font-heading text-xl font-semibold text-accent mb-4">DevOps & Tools</h3>
+              <h3 className="font-heading text-xl font-semibold text-accent mb-4">
+                DevOps & Tools
+              </h3>
               <div className="space-y-2">
-                {["Docker", "AWS", "Azure", "Git", "CI/CD", "Jest", "Postman"].map((skill) => (
-                  <div key={skill} className="text-text/80 hover:text-accent transition-colors cursor-default">
+                {[
+                  "Docker",
+                  "AWS",
+                  "Azure",
+                  "Git",
+                  "CI/CD",
+                  "Jest",
+                  "Postman",
+                ].map((skill) => (
+                  <div
+                    key={skill}
+                    className="text-text/80 hover:text-accent transition-colors cursor-default"
+                  >
                     {skill}
                   </div>
                 ))}
@@ -686,9 +1393,12 @@ export default function Portfolio() {
       <section ref={contactRef} id="contact" className="py-20 px-4 opacity-0">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">Let's Work Together</h2>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-text mb-4">
+              Let's Work Together
+            </h2>
             <p className="text-text/70 max-w-2xl mx-auto">
-              Have a project in mind? I'm always open to discussing new opportunities and collaborations.
+              Have a project in mind? I'm always open to discussing new
+              opportunities and collaborations.
             </p>
           </div>
 
@@ -697,14 +1407,14 @@ export default function Portfolio() {
               <form
                 className="space-y-6"
                 onSubmit={(e) => {
-                  e.preventDefault()
-                  const formData = new FormData(e.currentTarget)
-                  const name = formData.get("name")
-                  const email = formData.get("email")
-                  const subject = formData.get("subject")
-                  const message = formData.get("message")
-                  const mailtoLink = `mailto:arowosere.ak@gmail.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`
-                  window.location.href = mailtoLink
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get("name");
+                  const email = formData.get("email");
+                  const subject = formData.get("subject");
+                  const message = formData.get("message");
+                  const mailtoLink = `mailto:arowosere.ak@gmail.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+                  window.location.href = mailtoLink;
                 }}
               >
                 <div className="grid md:grid-cols-2 gap-4">
@@ -763,10 +1473,18 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex gap-4">
-                  <Button type="submit" className="flex-1 bg-accent hover:bg-accent/90 text-primary">
+                  <Button
+                    type="submit"
+                    className="flex-1 bg-accent hover:bg-accent/90 text-primary"
+                  >
                     Send Message
                   </Button>
-                  <Link href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex-1">
+                  <Link
+                    href="/cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
                     <Button
                       type="button"
                       variant="outline"
@@ -783,7 +1501,10 @@ export default function Portfolio() {
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="mailto:arowosere.ak@gmail.com">
-              <Button variant="outline" className="border-accent/20 text-text hover:bg-accent/10 bg-transparent">
+              <Button
+                variant="outline"
+                className="border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+              >
                 <Mail className="mr-2 h-4 w-4" />
                 arowosere.ak@gmail.com
               </Button>
@@ -793,7 +1514,10 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" className="border-accent/20 text-text hover:bg-accent/10 bg-transparent">
+              <Button
+                variant="outline"
+                className="border-accent/20 text-text hover:bg-accent/10 bg-transparent"
+              >
                 <WhatsApp className="mr-2 h-4 w-4" />
                 WhatsApp
               </Button>
@@ -807,22 +1531,51 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-text/60">
-              © {new Date().getFullYear()} Arowosere Abdulkhabeer. All rights reserved.
+              © {new Date().getFullYear()} Arowosere Abdulkhabeer. All rights
+              reserved.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="https://github.com/maxim-ld" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="text-text/60 hover:text-accent">
+              <Link
+                href="https://github.com/maxim-ld"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-text/60 hover:text-accent"
+                >
                   <Github className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="https://linkedin.com/in/arowosere-ak" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="text-text/60 hover:text-accent">
+              <Link
+                href="https://linkedin.com/in/arowosere-ak"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-text/60 hover:text-accent"
+                >
                   <Linkedin className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="https://x.com/A_Quintet" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="text-text/60 hover:text-accent">
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <Link
+                href="https://x.com/A_Quintet"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-text/60 hover:text-accent"
+                >
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </Button>
@@ -832,5 +1585,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

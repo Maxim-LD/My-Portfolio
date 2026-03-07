@@ -30,6 +30,24 @@ A full-featured backend for managing a car dealership:
 - Inventory CRUD, payment integration, and order management
 - TypeScript + Node.js + MongoDB
 
+### 🗓️ Intelligent Productivity & Life-Management System
+A full-stack system designed to help users plan realistically and avoid over-commitment:
+- TypeScript, Node.js, React.js, and MySQL stack
+- Real-time task engine and responsive UI
+- Streak tracking and progress-momentum features
+
+### 💸 Node.js Payment Service
+A RESTful payment-processing API to parse and execute financial instructions:
+- Built with Node.js and Express using a custom server abstraction
+- Validates, interprets, and processes transaction commands with high accuracy
+- Rule-driven engine for consistent execution across services
+
+### 🛡️ Heuristic Engine API
+A backend service for automated threat detection:
+- Detects phishing threats across URLs, emails, and QR codes using rule-based analysis
+- Risk scoring system that evaluates and explains flagged resources
+- Translates real-world security patterns into executable rules
+
 ---
 
 ## 🧰 Tech Stack
