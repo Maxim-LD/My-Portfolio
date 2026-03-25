@@ -423,18 +423,63 @@ export default function Portfolio() {
             {/* Experience 2 */}
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
               <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-text/20 text-text shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 transition-colors group-hover:bg-accent group-hover:text-primary">
+                <Code2 className="w-4 h-4" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
+                <div className="flex flex-col mb-2">
+                  <h3 className="font-bold text-lg text-text">
+                    Dala Innovation
+                  </h3>
+                  <div className="text-accent text-sm font-medium">
+                    Remote Backend Developer (Contract)
+                  </div>
+                  <time className="text-text/60 text-xs mt-1">
+                    Jul 2025 – Dec 2025
+                  </time>
+                </div>
+                <div className="text-text/80 text-sm">
+                  <ul className="space-y-2 mt-2">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Developed secure backend access controls for the
+                        DalaCare App.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Implemented JWT/OAuth authentication flows and
+                        middleware-based authorization.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2 mt-1">▹</span>
+                      <span>
+                        Applied core software security principles to mitigate
+                        vulnerabilities.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Experience 3 */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-text/20 text-text shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 transition-colors group-hover:bg-accent group-hover:text-primary">
                 <Database className="w-4 h-4" />
               </div>
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
                 <div className="flex flex-col mb-2">
                   <h3 className="font-bold text-lg text-text">
-                    Epic Global Ltd
+                    Crude City Global
                   </h3>
                   <div className="text-accent text-sm font-medium">
                     Backend Software Engineer (Contract)
                   </div>
                   <time className="text-text/60 text-xs mt-1">
-                    Jul 2025 – Dec 2025
+                    Mar 2025 – Aug 2025
                   </time>
                 </div>
                 <div className="text-text/80 text-sm">
@@ -465,51 +510,6 @@ export default function Portfolio() {
                       <span>
                         Implemented complex business rules and validations for
                         HR processes.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Experience 3 */}
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-primary bg-text/20 text-text shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10 transition-colors group-hover:bg-accent group-hover:text-primary">
-                <Code2 className="w-4 h-4" />
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-accent/20 bg-primary/50 backdrop-blur-sm transition-all hover:border-accent/40 shadow-sm ml-4 md:ml-0 md:group-odd:mr-10 md:group-even:ml-10">
-                <div className="flex flex-col mb-2">
-                  <h3 className="font-bold text-lg text-text">
-                    Dala Innovation
-                  </h3>
-                  <div className="text-accent text-sm font-medium">
-                    Remote Backend Developer (Contract)
-                  </div>
-                  <time className="text-text/60 text-xs mt-1">
-                    Mar 2025 – Aug 2025
-                  </time>
-                </div>
-                <div className="text-text/80 text-sm">
-                  <ul className="space-y-2 mt-2">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 mt-1">▹</span>
-                      <span>
-                        Developed secure backend access controls for the
-                        DalaCare App.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 mt-1">▹</span>
-                      <span>
-                        Implemented JWT/OAuth authentication flows and
-                        middleware-based authorization.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2 mt-1">▹</span>
-                      <span>
-                        Applied core software security principles to mitigate
-                        vulnerabilities.
                       </span>
                     </li>
                   </ul>
@@ -1313,6 +1313,8 @@ export default function Portfolio() {
                 {[
                   "TypeScript",
                   "JavaScript",
+                  "Java",
+                  "SpringBoot",
                   "Node.js",
                   "SQL",
                   "C#",
@@ -1375,6 +1377,7 @@ export default function Portfolio() {
                   "CI/CD",
                   "Jest",
                   "Postman",
+                  "OpenAPI",
                 ].map((skill) => (
                   <div
                     key={skill}

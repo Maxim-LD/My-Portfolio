@@ -124,24 +124,25 @@ export function CVModal() {
                     </ul>
                   </div>
 
+
                   <div>
-                    <h3 className="font-bold text-white">Epic Global Ltd — Backend Software Engineer (Contract)</h3>
+                    <h3 className="font-bold text-white">Dala Innovation — Remote Backend Developer (Contract)</h3>
                     <p className="text-blue-400 mb-2">Remote | Jul 2025 – Dec 2025</p>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Developed secure backend access controls for the DalaCare App.</li>
+                      <li>Implemented JWT/OAuth authentication flows and middleware-based authorization.</li>
+                      <li>Applied core software security principles to mitigate vulnerabilities.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-white">Crude City Global — Backend Software Engineer (Contract)</h3>
+                    <p className="text-blue-400 mb-2">Remote | Mar 2025 – Aug 2025</p>
                     <ul className="list-disc list-inside space-y-1 text-sm">
                       <li>Engineered backend services for an HR management platform using TypeScript and Node.js.</li>
                       <li>Designed and implemented RESTful APIs and role-based access controls.</li>
                       <li>Modeled relational data and implemented persistence logic using SQL and ORM tools.</li>
                       <li>Implemented complex business rules and validations for HR processes.</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-bold text-white">Dala Innovation — Remote Backend Developer (Contract)</h3>
-                    <p className="text-blue-400 mb-2">Remote | Mar 2025 – Aug 2025</p>
-                    <ul className="list-disc list-inside space-y-1 text-sm">
-                      <li>Developed secure backend access controls for the DalaCare App.</li>
-                      <li>Implemented JWT/OAuth authentication flows and middleware-based authorization.</li>
-                      <li>Applied core software security principles to mitigate vulnerabilities.</li>
                     </ul>
                   </div>
 
