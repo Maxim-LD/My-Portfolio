@@ -1314,7 +1314,6 @@ export default function Portfolio() {
                   "TypeScript",
                   "JavaScript",
                   "Java",
-                  "SpringBoot",
                   "Node.js",
                   "SQL",
                   "C#",
@@ -1335,7 +1334,7 @@ export default function Portfolio() {
                 Frameworks
               </h3>
               <div className="space-y-2">
-                {["Express.js", "Next.js", ".NET", "ASP.NET"].map((skill) => (
+                {["Express.js", "Next.js", "SpringBoot", ".NET", "ASP.NET"].map((skill) => (
                   <div
                     key={skill}
                     className="text-text/80 hover:text-accent transition-colors cursor-default"
